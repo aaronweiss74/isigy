@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>IS IT GRADUATION YET?</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="Is it graduation yet?'" />
+		<meta name="keywords" content="grad, graduation, high school, graduates, seniors, senior year," />
+		<meta name="author" content="Aaron Weiss" /><!-- By Aaron Weiss -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link href="/css/reset.min.css" rel="stylesheet" media="screen">
+		<link href="/css/isigy.min.css" rel="stylesheet" media="screen">
+	</head>
+	<body>
+		<%= yield %>
+	</body>
+	<% if @analytics_id and @analytics_dm %>
+		<script type="text/javascript">
+	  		var _gaq = _gaq || [];
+	  		_gaq.push(['_setAccount', '<%= @analytics_id %>']);
+	  		_gaq.push(['_setDomainName', '<%= @analytics_dm %>']);
+	  		_gaq.push(['_trackPageview']);
+
+	  		(function() {
+	    		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  	})();
+		</script>
+	<% end %>
+</html>
