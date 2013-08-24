@@ -7,6 +7,8 @@ before do
 	@grad = Date.new(2014, 6, 17)
 	# Testing Graduation
 	# @grad = DateTime.now
+	@analytics_id = "UA-38729372-3"
+	@analytics_dm = "aaronweiss.us"
 end
 
 helpers do
